@@ -1,14 +1,14 @@
-import React, {useState} from 'react';
+import { Box } from "@mui/material";
+import React, { useState } from 'react';
+import { Link, useLocation } from "react-router-dom";
+import { info } from "../info/Info";
 import Style from './Navbar.module.scss';
 import Toggler from "./home/Toggler";
-import {Link, useLocation} from "react-router-dom";
-import {Box} from "@mui/material";
-import {info} from "../info/Info";
 
 const links = [
     {
         name: 'Home',
-        to: '/',
+        to: '/mhassan',
         active: 'home'
     },
     {
@@ -19,14 +19,19 @@ const links = [
     {
         name: info.initials,
         type: 'initials',
-        to: '/',
+        to: '/mhassan',
         active: 'home'
     },
-    // {
-    //     name: 'Portfolio',
-    //     to: '/portfolio',
-    //     active: 'portfolio'
-    // }
+    {
+        name: 'Portfolio',
+        to: '/portfolio',
+        active: 'portfolio'
+    },
+    {
+        name: 'Academic Projects',
+        to: '/academic-projects',
+        active: 'academic-projects'
+    }
 ]
 
 export default function Navbar({darkMode, handleClick}) {
@@ -39,13 +44,25 @@ export default function Navbar({darkMode, handleClick}) {
                  gap={{xs: '2rem', md: '8rem'}}
                  textTransform={'lowercase'} fontSize={'1rem'}>
                 {links.map((link, index) => (
+                    // uppercase the first letter of the active link
+                    // and lowercase the rest
+                    
+                    // <Box key={index} component={'li'} className={(link.active === active && !link.type) && Style.active}
+                    //      sx={{borderImageSource: info.gradient}}>
+                    //     <Link to={link.to} onClick={() => setActive(link.active)} className={Style.link}>
+                    //         {!link.type && <p style={{padding: '0.5rem 0'}}>{link.name}</p>}
+                    //         {link.type && <h1>{link.name}</h1>}
+                    //     </Link>
+                    // </Box>
                     <Box key={index} component={'li'} className={(link.active === active && !link.type) && Style.active}
-                         sx={{borderImageSource: info.gradient}}>
+                        sx={{borderImageSource: info.gradient}}>
                         <Link to={link.to} onClick={() => setActive(link.active)} className={Style.link}>
-                            {!link.type && <p style={{padding: '0.5rem 0'}}>{link.name}</p>}
+                            {!link.type && <p style={{padding: '0.5rem 0', textTransform: 'capitalize'}}>{link.name}</p>}
                             {link.type && <h1>{link.name}</h1>}
                         </Link>
                     </Box>
+
+
                 ))}
                 <li>
                     <Toggler darkMode={darkMode} handleClick={handleClick}/>

@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import Style from './BaseLayout.module.scss'
-import Navbar from "./Navbar";
-import Home from "./home/Home";
-import About from "./about/About";
-import Portfolio from "./portfolio/Portfolio";
-import { Route, Routes } from "react-router-dom";
 import { Box, Grid } from "@mui/material";
+import React, { useEffect, useState } from 'react';
+import { Route, Routes } from "react-router-dom";
+import Style from './BaseLayout.module.scss';
+import Navbar from "./Navbar";
+import About from "./about/About";
+import AcademicProjects from "./academic_research/AcademicProjects";
+import Home from "./home/Home";
+import Portfolio from "./portfolio/Portfolio";
 
 export default function BaseLayout() {
    let [darkMode, setDarkMode] = useState(false);
@@ -36,9 +37,10 @@ export default function BaseLayout() {
             </Grid>
             <Grid item flexGrow={1}>
                <Routes>
-                  <Route exact path={'/'} element={<Home />} />
+                  <Route exact path={'/mhassan'} element={<Home />} />
                   <Route exact path={'/about'} element={<About />} />
-                  {/* <Route exact path={'/portfolio'} element={<Portfolio />} /> */}
+                  <Route exact path={'/portfolio'} element={<Portfolio />} />
+                  <Route exact path={'/academic-projects'} element={<AcademicProjects />} />
                </Routes>
             </Grid>
             <Grid item>

@@ -1,5 +1,5 @@
 import mock2 from "../img/mock2.png";
-import self from "../img/self1.png";
+import self1 from "../img/self1.png";
 
 /* Hi there! Thanks for checking out my portfolio template. Be sure to read the comments to get a better understanding of
 how to make this template work best for you! */
@@ -19,21 +19,26 @@ of what each of the values mean.
  */
 
 export const info = {
-    firstName: "Muhammad Saad",
+    firstName: "Saad",
     lastName: "Hassan",
-    initials: 'SH7', // the example uses first and last, but feel free to use three or more if you like.
+    initials: 'maliksh7', // the example uses first and last, but feel free to use three or more if you like.
     position: "a Software Engineer",
-    selfPortrait: self, // don't change this unless you want to name your self-portrait in the "img" folder something else!
+    selfPortrait: self1, // don't change this unless you want to name your self-portrait in the "img" folder something else!
     gradient: `-webkit-linear-gradient(135deg, ${colors})`, // don't change this either
     baseColor: colors[0],
     miniBio: [ // these are just some "tidbits" about yourself. You can look at mine https://paytonjewell.github.io/#/ for an example if you'd like
         {
             emoji: '☕',
-            text: 'fueled by coffee'
+            text: 'Fueled by coffee'
+        },
+
+        {
+            emoji: "🖥️",
+            text: "Information Technology Intern at Texas Instruments"  
         },
         {
             emoji: '🌎',
-            text: 'based in the Germany'
+            text: 'Based in the Germany'
         },
         {
             emoji: "💼",
@@ -43,6 +48,7 @@ export const info = {
             emoji: "📧",
             text: "awansaadhassan@gmail.com"
         }
+
     ],
     socials: [
         {
@@ -65,10 +71,27 @@ export const info = {
             icon: "fa fa-linkedin",
             label: 'linkedin'
         },
+        // {
+        //     link: "https://twitter.com/awansaadhassan1",
+        //     icon: "fa fa-twitter",
+        //     label: 'twitter'
+        // },
+        // {
+        //     link: "https://www.youtube.com/channel/UC9Z3Z6XQK1XVJ9QJXZ0Q4jQ",
+        //     icon: "fa fa-youtube",
+        //     label: 'youtube'
+        // },
+        // add my blog link
         {
-            link: "https://twitter.com/awansaadhassan1",
-            icon: "fa fa-twitter",
-            label: 'twitter'
+            link: "https://saadmalik7.wordpress.com/",
+            icon: "fa fa-wordpress",
+            label: 'blog'
+        },
+        // add my medium blog link
+        {
+            link: "https://medium.com/@maliksh7",
+            icon: "fa fa-medium",
+            label: 'medium'
         }
         // Feel free to remove any of these that you don't have. I'll write an FAQ on how to add new ones later, let me know if you have a request for an icon!
         // Just change the links so that they lead to your social profiles.
@@ -77,18 +100,18 @@ export const info = {
     bio: "Hello! 👋 I'm Saad. 💼 I'm an Software / DevOps Engineer 🌐 doing Master at Hochschule Hof. 🏥 I studied CompSci 🖥️ at Fast NUCES 🎓, and I enjoy reading blogs 📚 and playing online games 🎮 in my free time! 😄",
     skills:
     {
-        proficientWith: ['aws cloud', 'docker swarm', 'git', 'kubernetes', 'terraform', 'python', 'nodejs', 'linux', 'bash', 'jenkins', 'Travis CI', 'ansible', 'checkmk', 'elk', 'octopus deploy'],
-        exposedTo: ['ruby', 'React', 'angular'],
-        Certifications: ['AWS Certified Cloud Practitioner']
+        proficientWith: ['aws cloud', 'java', 'git', 'docker', 'ruby', 'python', 'nodejs', 'linux', 'bash', 'C#', 'Blazor'],
+        exposedTo: ['flutter', 'React', 'go'],
+        certifications: ['AWS Academy Cloud Foundations']
     }
     ,
 
     certifications: [{
-        label: 'AWS Certified Cloud Practitioner',
+        label: 'AWS Academy Cloud Foundations',
         emoji: '🚀'
     },
     {
-        label: 'AWS Certified Solutions Architect Associate',
+        label: 'Microsoft Learn Student Ambassador',
         emoji: '🚀'
     }],
     hobbies: [
@@ -105,32 +128,18 @@ export const info = {
             emoji: '🎥'
         },
         {
-            label: 'online games',
-            emoji: '🎮'
+            label: 'blogging',
+            emoji: '📝'
         }
         // Same as above, change the emojis to match / relate to your hobbies or interests.
         // You can also remove the emojis if you'd like, I just think they look cute :P
     ],
     portfolio: [ // Include devops engineer projects here
-        // {
-        //     title: "Jenkins Master-Slave on ECS using Terraform",
-        //     live: "https://paytonpierce.dev", //this should be a link to the live version of your project, think github pages, netlify, heroku, etc. Or your own domain, if you have it.
-        //     source: "https://github.com/paytonjewell", // this should be a link to the **repository** of the project, where the code is hosted.
-        //     image: mock1
-        // },
-        {
-            title: "Centralized Monitoring of AWS infra using Checkmk",
-            // live: "https://paytonpierce.dev",
-            // source: "https://github.com/paytonjewell",
-            image: mock2
-        },
-        // {
-        //     title: "Centralized Logging using ELK",
-        //     live: "https://paytonpierce.dev",
-        //     source: "",
-        //     image: mock3
-        // },
-
-
+         {
+             title: "Jenkins Master-Slave on ECS using Terraform",
+             live: "https://paytonpierce.dev", //this should be a link to the live version of your project, think github pages, netlify, heroku, etc. Or your own domain, if you have it.
+             source: "https://github.com/paytonjewell", // this should be a link to the **repository** of the project, where the code is hosted.
+             image: mock2
+         } 
     ]
 }

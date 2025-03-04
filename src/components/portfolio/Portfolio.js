@@ -1,18 +1,50 @@
-import React from 'react';
+import { Box } from "@mui/material";
+import Pagination from '@mui/material/Pagination';
+import React, { useState } from 'react';
+import projects from "../../info/Projects";
 import PortfolioBlock from "./PortfolioBlock";
-import { Box, Grid } from "@mui/material";
-import { info } from "../../info/Info";
 
-export default function Portfolio() {
-    return (
-        <Box>
-            <Grid container display={'flex'} justifyContent={'center'}>
-                {info.portfolio.map((project, index) => (
-                    <Grid item xs={12} md={6} key={index}>
-                        <PortfolioBlock image={project.image} live={project.live} source={project.source} title={project.title} />
-                    </Grid>
-                ))}
-            </Grid>
-        </Box>
-    );
-};
+const ITEMS_PER_PAGE = 1; // 1 project per page
+
+function Portfolio() {
+   const [page, setPage] = useState(1);
+   const totalPages = Math.ceil(projects.length / ITEMS_PER_PAGE);
+
+   const handleChange = (event, value) => {
+      setPage(value);
+   };
+
+   const startIndex = (page - 1) * ITEMS_PER_PAGE;
+   const selectedProject = projects[startIndex];
+
+   return (
+      <Box 
+         component={'section'} 
+         display="flex" 
+         flexDirection="column" 
+         alignItems="center" 
+         justifyContent="center" 
+         minHeight="100vh"
+         p={3}
+      >
+         <Box display="flex" justifyContent="center" alignItems="center" width="100%" flexGrow={1}>
+            <PortfolioBlock 
+               title={selectedProject.title} 
+               description={selectedProject.description} 
+               image={selectedProject.image} 
+               link={selectedProject.link} 
+            />
+         </Box>
+         <Pagination 
+            count={totalPages} 
+            page={page} 
+            onChange={handleChange} 
+            color="primary" 
+            size="large" 
+            sx={{ marginTop: '2rem'}} 
+         />
+      </Box>
+   );
+}
+
+export default Portfolio;

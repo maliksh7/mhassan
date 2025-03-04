@@ -1,22 +1,44 @@
+import { Box, Typography } from "@mui/material";
 import React from 'react';
-import IconLink from "./IconLink";
-import {Box} from "@mui/material";
 
-function PortfolioBlock(props) {
-   const {image, live, source, title} = props;
+function PortfolioBlock({ title, description, image, link }) {
    return (
-      <Box display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
-         <Box component={'img'} src={image} alt={'mockup'}/>
-         <h1 style={{fontSize: '2rem'}}>{title}</h1>
-         <Box className={'portfolio'} display={'flex'} flexDirection={'column'} gap={'0.5rem'}
-              alignItems={'center'} fontSize={'1.5rem'} py={'2rem'}>
-            <Box p={1} border={'2px solid black'} borderRadius={'25px'}>
-               <IconLink link={live} title={'Live Demo'} icon={'fa fa-safari'}/>
-            </Box>
-            <Box p={1} border={'2px solid black'} borderRadius={'25px'}>
-               <IconLink link={source} title={'Source Code'} icon={'fa fa-code'}/>
-            </Box>
-         </Box>
+      <Box 
+         component="a" 
+         href={link} 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         display="flex" 
+         flexDirection="column" 
+         alignItems="center" 
+         textAlign="center" 
+         p={3} 
+         m={2} 
+         width="80%" // Adjust width to make it larger
+         maxWidth="800px" 
+         boxShadow={3}
+         borderRadius="8px"
+         sx={{ 
+            textDecoration: 'none', 
+            color: 'inherit',
+            border: '4px solid gray' // Add a strong gray border
+         }}
+      >
+         <Box 
+            component="img" 
+            src={image} 
+            alt={title} 
+            width="100%" 
+            height="auto" 
+            mb={2} 
+            borderRadius="4px"
+         />
+         <Typography variant="h4" component="h3" gutterBottom>
+            {title}
+         </Typography>
+         <Typography variant="body1" sx={{ color: 'green' }}>
+            {description}
+         </Typography>
       </Box>
    );
 }

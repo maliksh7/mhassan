@@ -6,13 +6,13 @@ import Terminal from "./Terminal";
 
 
 export default function About() {
-    const firstName = info.firstName.toLowerCase()
+    const name = "maliksh7"
 
     function aboutMeText() {
         return <>
-            <p><span style={{color: info.baseColor}}>{firstName}{info.lastName.toLowerCase()} $</span> cat
-                about {firstName} </p>
-            <p><span style={{color: info.baseColor}}>about {firstName} <span
+            <p><span style={{color: info.baseColor}}>{name} $</span> cat
+                about {name} </p>
+            <p><span style={{color: info.baseColor}}>about {name} <span
                 className={Style.green}>(main)</span> $ </span>
                 {info.bio}
             </p>
@@ -21,7 +21,7 @@ export default function About() {
 
     function skillsText() {
         return <>
-            <p><span style={{color: info.baseColor}}>{firstName}{info.lastName.toLowerCase()} $</span> cd skills/tools
+            <p><span style={{color: info.baseColor}}>{name} $</span> cd skills/tools
             </p>
             <p><span style={{color: info.baseColor}}>skills/tools <span
                 className={Style.green}>(main)</span> $</span> ls</p>
@@ -33,13 +33,14 @@ export default function About() {
             <ul className={Style.skills}>
                 {info.skills.exposedTo.map((skill, index) => <li key={index}>{skill}</li>)}
             </ul>
+
         </>;
     }
     function certsText() {
         return <>
-            <p><span style={{color: info.baseColor}}>{firstName}{info.lastName.toLowerCase()} $</span> cd
-                Certs/DevOps</p>
-            <p><span style={{color: info.baseColor}}>Certs/DevOps <span
+            <p><span style={{color: info.baseColor}}>{name} $</span> cd
+                Certs/tech</p>
+            <p><span style={{color: info.baseColor}}> Certs/tech <span
                 className={Style.green}>(main)</span> $</span> ls</p>
             <ul>
                 {info.certifications.map((cert, index) => (
@@ -51,7 +52,7 @@ export default function About() {
 
     function miscText() {
         return <>
-            <p><span style={{color: info.baseColor}}>{firstName}{info.lastName.toLowerCase()} $</span> cd
+            <p><span style={{color: info.baseColor}}>{name} $</span> cd
                 hobbies/interests</p>
             <p><span style={{color: info.baseColor}}>hobbies/interests <span
                 className={Style.green}>(main)</span> $</span> ls</p>
