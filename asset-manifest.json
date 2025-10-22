@@ -1,10 +1,11 @@
 {
   "files": {
     "main.css": "/mhassan/static/css/main.90e2edf4.css",
-    "main.js": "/mhassan/static/js/main.18a54e3d.js",
+    "main.js": "/mhassan/static/js/main.ac106007.js",
     "static/media/self.jpeg": "/mhassan/static/media/self.3251e0df82f61c59a93c.jpeg",
     "static/media/mock2.png": "/mhassan/static/media/mock2.f02f20bf3997a803b0ed.png",
     "static/media/accm.png": "/mhassan/static/media/accm.1de9b9c7edf2c14851d8.png",
+    "static/media/self.jpg": "/mhassan/static/media/self.4b3d5a15be6493c0293a.jpg",
     "static/media/DeepMAD.png": "/mhassan/static/media/DeepMAD.691f76c47f944438e2bc.png",
     "static/media/Serverless-Flask-Application.png": "/mhassan/static/media/Serverless-Flask-Application.a8d8ec2a56f8880a8477.png",
     "static/media/ads.png": "/mhassan/static/media/ads.db4bc6ef69ace623f17e.png",
@@ -13,10 +14,10 @@
     "static/media/ft.png": "/mhassan/static/media/ft.1f6aaf048a305910512f.png",
     "index.html": "/mhassan/index.html",
     "main.90e2edf4.css.map": "/mhassan/static/css/main.90e2edf4.css.map",
-    "main.18a54e3d.js.map": "/mhassan/static/js/main.18a54e3d.js.map"
+    "main.ac106007.js.map": "/mhassan/static/js/main.ac106007.js.map"
   },
   "entrypoints": [
     "static/css/main.90e2edf4.css",
-    "static/js/main.18a54e3d.js"
+    "static/js/main.ac106007.js"
   ]
 }
