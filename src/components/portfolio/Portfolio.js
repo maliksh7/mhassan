@@ -3,9 +3,8 @@ import { useState } from "react";
 import projects from "../../info/Projects";
 import PortfolioBlock from "./PortfolioBlock";
 
-const ITEMS_PER_PAGE = 4; // 2 projects per row × 2 rows per page
+const ITEMS_PER_PAGE = 4;
 
-// Group projects by domain
 const groupByDomain = () => {
   const categories = {};
   projects.forEach((project) => {
@@ -19,13 +18,13 @@ const groupByDomain = () => {
 const groupedProjects = groupByDomain();
 const categories = Object.keys(groupedProjects);
 
-function Portfolio() {
+function Portfolio({ darkMode }) {
   const [selectedDomain, setSelectedDomain] = useState(categories[0]);
   const [page, setPage] = useState(1);
 
   const handleTabChange = (event, newValue) => {
     setSelectedDomain(newValue);
-    setPage(1); // reset page when domain changes
+    setPage(1);
   };
 
   const handlePageChange = (event, value) => {
@@ -34,55 +33,59 @@ function Portfolio() {
 
   const domainProjects = groupedProjects[selectedDomain] || [];
   const totalPages = Math.ceil(domainProjects.length / ITEMS_PER_PAGE);
-
   const startIndex = (page - 1) * ITEMS_PER_PAGE;
-  const selectedProjects = domainProjects.slice(
-    startIndex,
-    startIndex + ITEMS_PER_PAGE
-  );
+  const selectedProjects = domainProjects.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+  // Theme-aware color tokens
+  const bg          = darkMode ? "#1f1f1f" : "#f5f5f5";
+  const textColor   = darkMode ? "#e6edf3" : "#1f1f1f";
+  const tabColor    = darkMode ? "#8b949e" : "#555555";
+  const activeTab   = darkMode ? "#58a6ff" : "#0077cc";
+  const indicator   = darkMode ? "#58a6ff" : "#0077cc";
+  const pageItemClr = darkMode ? "#e6edf3" : "#1f1f1f";
 
   return (
     <Box
       component="section"
-      
       sx={{
         width: "100%",
         minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
-        bgcolor: "#1f1f1f", // deep dark background
-        color: "#e6edf3", // soft white text
+        bgcolor: bg,
+        color: textColor,
         p: { xs: 2, md: 5 },
-        pt: { xs: 10, md: 12 }, // 👈 added top padding for navbar space
+        pt: { xs: 10, md: 12 },
+        transition: "background-color 0.4s ease, color 0.4s ease",
+        boxSizing: "border-box",
       }}
     >
-      {/* Tabs for Domains */}
+      {/* Domain Tabs */}
       <Tabs
         value={selectedDomain}
         onChange={handleTabChange}
         centered
         variant="scrollable"
-        position = "center"
         scrollButtons="auto"
-        backgroundColor="#0d1117"   
         textColor="inherit"
         indicatorColor="primary"
         sx={{
           mb: 5,
           "& .MuiTab-root": {
-            color: 575e64,
+            color: tabColor,
             fontSize: "1rem",
             fontWeight: 500,
             textTransform: "none",
             minWidth: "auto",
             mx: 1,
+            transition: "color 0.3s",
           },
           "& .Mui-selected": {
-            color: "#58a6ff",
+            color: activeTab,
             fontWeight: 600,
           },
           "& .MuiTabs-indicator": {
-            backgroundColor: "#58a6ff",
+            backgroundColor: indicator,
             height: "3px",
             borderRadius: "2px",
           },
@@ -102,6 +105,7 @@ function Portfolio() {
               description={project.description}
               image={project.image}
               link={project.link}
+              darkMode={darkMode}
             />
           </Grid>
         ))}
@@ -118,12 +122,10 @@ function Portfolio() {
           sx={{
             mt: 5,
             alignSelf: "center",
-            "& .MuiPaginationItem-root": {
-              color: "#e6edf3",
-            },
+            "& .MuiPaginationItem-root": { color: pageItemClr },
             "& .Mui-selected": {
-              backgroundColor: "#58a6ff !important",
-              color: "#0d1117 !important",
+              backgroundColor: `${activeTab} !important`,
+              color: darkMode ? "#0d1117 !important" : "#ffffff !important",
             },
           }}
         />

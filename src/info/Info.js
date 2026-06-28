@@ -33,7 +33,7 @@ export const info = {
 
         {
             emoji: "🖥️",
-            text: "Software Engineer at Texas Instruments"  
+            text: "4x Software Engineer"  
         },
         {
             emoji: '🌎',
@@ -41,7 +41,7 @@ export const info = {
         },
         {
             emoji: "💼",
-            text: "Master Student at Hochschule Hof"
+            text: "Master Graduate @Hochschule Hof"
         },
         {
             emoji: "📧",

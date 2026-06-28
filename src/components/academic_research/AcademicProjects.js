@@ -1,14 +1,14 @@
 // src/components/AcademicResearch/AcademicProjects.js
 
 import { useState } from 'react';
-import styles from './AcademicProjects.module.scss'; // Import the SCSS module
+import styles from './AcademicProjects.module.scss';
 
 const projects = [
     {
-        title: "Master Thesis - Automated API Connectivity and Credential Monitoring System for Logistics Integration (ACCM))",
+        title: "Master Thesis - Automated API Connectivity and Credential Monitoring System for Logistics Integration (ACCM)",
         date: "(09/2025)",
         description: "Developing an automated system to monitor API connectivity and credentials for seamless logistics integration at Texas Instruments.",
-        link: ""
+        link: "https://github.com/maliksh7/accm"
     },
     {
         title: "Final Project Report - Malicious Activity Detection Using Deep Learning",
@@ -36,140 +36,91 @@ const projects = [
     }
 ];
 
-const AcademicProjects = () => {
+const AcademicProjects = ({ darkMode }) => {
     const [currentPage, setCurrentPage] = useState(0);
     const projectsPerPage = 2;
 
-    // Calculate the index range for the current page
     const startIndex = currentPage * projectsPerPage;
-    const endIndex = startIndex + projectsPerPage;
-    const currentProjects = projects.slice(startIndex, endIndex);
+    const currentProjects = projects.slice(startIndex, startIndex + projectsPerPage);
+    const totalPages = Math.ceil(projects.length / projectsPerPage);
 
-    // Function to handle page change
     const handleNextPage = () => {
-        if (currentPage < Math.ceil(projects.length / projectsPerPage) - 1) {
-            setCurrentPage(currentPage + 1);
-        }
+        if (currentPage < totalPages - 1) setCurrentPage(currentPage + 1);
     };
 
     const handlePreviousPage = () => {
-        if (currentPage > 0) {
-            setCurrentPage(currentPage - 1);
-        }
+        if (currentPage > 0) setCurrentPage(currentPage - 1);
     };
 
+    // Consistent title color regardless of whether it's a link or plain text
+    // Matches the site's accent: blue in dark mode, darker blue in light mode
+    const titleColor = darkMode ? "#58a6ff" : "#0077cc";
+    const textColor  = darkMode ? "#c9d1d9" : "#1f1f1f";
+    const descColor  = darkMode ? "#8b949e" : "#555555";
+    const dateColor  = darkMode ? "#8b949e" : "#777777";
+    const borderColor = darkMode ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)";
+    const cardBg     = darkMode ? "rgba(255,255,255,0.03)" : "#ffffff";
+
     return (
-        // generate main container div in the center of the page horizontally and vertically with min height of 100vh
         <div
             className={styles.academicProjects}
-            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '90vh', padding: '1rem' }}
+            style={{ color: textColor }}
         >
-            <h2 className={styles.sectionTitle}>Academic Projects and Research</h2>
+            <h2 className={styles.sectionTitle} style={{ color: textColor }}>
+                Academic Projects and Research
+            </h2>
+
             <div className={styles.projectsContainer}>
                 {currentProjects.map((project, index) => (
-                    <div key={index} className={styles.project}>
+                    <div
+                        key={index}
+                        className={styles.project}
+                        style={{ borderColor: borderColor, backgroundColor: cardBg }}
+                    >
                         <h3 className={styles.projectTitle}>
-                            <a 
-                                href={project.link} 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className={styles.projectLink}
-                            >
-                                {project.title}
-                            </a>
-                            <span className={styles.projectDate}>{project.date}</span>
+                            {/* Always render title in the same accent color whether linked or not */}
+                            {project.link ? (
+                                <a
+                                    href={project.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={styles.projectLink}
+                                    style={{ color: titleColor }}
+                                >
+                                    {project.title}
+                                </a>
+                            ) : (
+                                <span style={{ color: titleColor }}>{project.title}</span>
+                            )}
+                            <span className={styles.projectDate} style={{ color: dateColor }}>
+                                {project.date}
+                            </span>
                         </h3>
-                        <p className={styles.projectDescription}>{project.description}</p>
+                        <p className={styles.projectDescription} style={{ color: descColor }}>
+                            {project.description}
+                        </p>
                     </div>
                 ))}
             </div>
+
             <div className={styles.pagination}>
-                <button 
-                    className={styles.paginationButton} 
-                    onClick={handlePreviousPage} 
+                <button
+                    className={styles.paginationButton}
+                    onClick={handlePreviousPage}
                     disabled={currentPage === 0}
                 >
                     Previous
                 </button>
-                <button 
-                    className={styles.paginationButton} 
-                    onClick={handleNextPage} 
-                    disabled={currentPage >= Math.ceil(projects.length / projectsPerPage) - 1}
+                <button
+                    className={styles.paginationButton}
+                    onClick={handleNextPage}
+                    disabled={currentPage >= totalPages - 1}
                 >
                     Next
                 </button>
             </div>
         </div>
     );
-
-    // return (
-
-
-
-
-
-
-        
-    //     <div className={styles.academicProjects}>
-    //         <h2 className={styles.sectionTitle}>Academic Projects and Research</h2>
-
-    //         <div className={styles.projectsContainer}>
-    //             <div className={styles.column}>
-    //                 {currentProjects[0] && (
-    //                     <div className={styles.project}>
-    //                         <h3 className={styles.projectTitle}>
-    //                             <a 
-    //                                 href={currentProjects[0].link} 
-    //                                 target="_blank" 
-    //                                 rel="noopener noreferrer"
-    //                                 className={styles.projectLink}
-    //                             >
-    //                                 {currentProjects[0].title}
-    //                             </a>
-    //                             <span className={styles.projectDate}>{currentProjects[0].date}</span>
-    //                         </h3>
-    //                         <p className={styles.projectDescription}>{currentProjects[0].description}</p>
-    //                     </div>
-    //                 )}
-    //             </div>
-    //             <div className={styles.column}>
-    //                 {currentProjects[1] && (
-    //                     <div className={styles.project}>
-    //                         <h3 className={styles.projectTitle}>
-    //                             <a 
-    //                                 href={currentProjects[1].link} 
-    //                                 target="_blank" 
-    //                                 rel="noopener noreferrer"
-    //                                 className={styles.projectLink}
-    //                             >
-    //                                 {currentProjects[1].title}
-    //                             </a>
-    //                             <span className={styles.projectDate}>{currentProjects[1].date}</span>
-    //                         </h3>
-    //                         <p className={styles.projectDescription}>{currentProjects[1].description}</p>
-    //                     </div>
-    //                 )}
-    //             </div>
-    //         </div>
-
-    //         <div className={styles.pagination}>
-    //             <button 
-    //                 className={styles.paginationButton} 
-    //                 onClick={handlePreviousPage} 
-    //                 disabled={currentPage === 0}
-    //             >
-    //                 Previous
-    //             </button>
-    //             <button 
-    //                 className={styles.paginationButton} 
-    //                 onClick={handleNextPage} 
-    //                 disabled={currentPage >= Math.ceil(projects.length / projectsPerPage) - 1}
-    //             >
-    //                 Next
-    //             </button>
-    //         </div>
-    //     </div>
-    // );
 };
 
 export default AcademicProjects;

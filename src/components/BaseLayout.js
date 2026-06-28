@@ -12,21 +12,19 @@ export default function BaseLayout() {
    let [darkMode, setDarkMode] = useState(false);
 
    function handleToggleDarkMode() {
-      let oppositeOfCurrentDarkMode = !darkMode
-      console.log(oppositeOfCurrentDarkMode)
-      localStorage.setItem('darkMode', `${oppositeOfCurrentDarkMode}`)
-      setDarkMode(oppositeOfCurrentDarkMode)
+      let oppositeOfCurrentDarkMode = !darkMode;
+      localStorage.setItem('darkMode', `${oppositeOfCurrentDarkMode}`);
+      setDarkMode(oppositeOfCurrentDarkMode);
    }
 
    useEffect(() => {
       let detectedDarkMode = eval(localStorage.getItem('darkMode'));
-
       if (detectedDarkMode) {
-         setDarkMode(detectedDarkMode)
+         setDarkMode(detectedDarkMode);
       } else {
-         localStorage.setItem('darkMode', 'false')
+         localStorage.setItem('darkMode', 'false');
       }
-   }, [])
+   }, []);
 
    return (
       <Box className={darkMode ? Style.dark : Style.light}>
@@ -39,18 +37,16 @@ export default function BaseLayout() {
                <Routes>
                   <Route exact path={'/mhassan'} element={<Home />} />
                   <Route exact path={'/about'} element={<About />} />
-                  <Route exact path={'/portfolio'} element={<Portfolio />} />
-                  <Route exact path={'/academic-projects'} element={<AcademicProjects />} />
+                  <Route exact path={'/portfolio'} element={<Portfolio darkMode={darkMode} />} />
+                  <Route exact path={'/academic-projects'} element={<AcademicProjects darkMode={darkMode} />} />
                </Routes>
             </Grid>
             <Grid item>
                <Box component={'footer'} display={'flex'} flexDirection={'column'} alignItems={'center'}
                   py={'1.5rem'} sx={{ opacity: 0.7 }} width={'100%'}>
-                  
                </Box>
             </Grid>
          </Grid>
       </Box>
-   )
+   );
 }
-

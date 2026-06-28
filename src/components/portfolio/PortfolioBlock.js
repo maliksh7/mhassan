@@ -1,6 +1,17 @@
 import { Box, Typography } from "@mui/material";
 
-function PortfolioBlock({ title, description, image, link }) {
+function PortfolioBlock({ title, description, image, link, darkMode }) {
+  // Theme-aware tokens
+  const cardBg      = darkMode ? "rgba(255,255,255,0.04)" : "#ffffff";
+  const cardBorder  = darkMode ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.10)";
+  const cardShadow  = darkMode ? "0 0 10px rgba(0,0,0,0.4)" : "0 2px 12px rgba(0,0,0,0.08)";
+  const titleColor  = darkMode ? "#58a6ff" : "#0077cc";
+  const descColor   = darkMode ? "#9da5b4" : "#444444";
+  const hoverBorder = darkMode ? "#58a6ff" : "#0077cc";
+  const hoverShadow = darkMode
+    ? "0 0 20px rgba(88,166,255,0.4)"
+    : "0 4px 20px rgba(0,119,204,0.2)";
+
   return (
     <Box
       component="a"
@@ -13,18 +24,19 @@ function PortfolioBlock({ title, description, image, link }) {
         alignItems: "center",
         textAlign: "center",
         textDecoration: "none",
-        color: "#e6edf3",
+        color: "inherit",
         p: 3,
         height: "100%",
         borderRadius: 3,
-        // bgcolor: "rgba(255, 255, 255, 0.05)",
-        border: "1px solid rgba(255, 255, 255, 0.15)",
-        boxShadow: "0 0 10px rgba(0,0,0,0.4)",
+        bgcolor: cardBg,
+        border: `1px solid ${cardBorder}`,
+        boxShadow: cardShadow,
         transition: "all 0.25s ease-in-out",
+        boxSizing: "border-box",
         "&:hover": {
           transform: "translateY(-4px)",
-          border: "1px solid #58a6ff",
-          boxShadow: "0 0 20px rgba(88,166,255,0.4)",
+          border: `1px solid ${hoverBorder}`,
+          boxShadow: hoverShadow,
         },
       }}
     >
@@ -37,23 +49,19 @@ function PortfolioBlock({ title, description, image, link }) {
           height: "auto",
           mb: 2,
           borderRadius: 2,
-          filter: "brightness(0.9) contrast(1.1)",
+          filter: darkMode ? "brightness(0.9) contrast(1.1)" : "brightness(1) contrast(1)",
         }}
       />
       <Typography
         variant="h5"
         gutterBottom
-        sx={{ color: "#58a6ff", fontWeight: 600 }}
+        sx={{ color: titleColor, fontWeight: 600, fontSize: { xs: "1.1rem", md: "1.3rem" } }}
       >
         {title}
       </Typography>
       <Typography
         variant="body2"
-        sx={{
-          color: "#9da5b4",
-          lineHeight: 1.5,
-          maxWidth: "90%",
-        }}
+        sx={{ color: descColor, lineHeight: 1.6, maxWidth: "90%" }}
       >
         {description}
       </Typography>

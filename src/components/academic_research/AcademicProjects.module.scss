@@ -1,95 +1,145 @@
 /* src/components/AcademicResearch/AcademicProjects.module.scss */
 
+/* ── Color tokens matching the rest of the site ── */
+/* light mode: dark text on white bg  |  dark mode: white text on dark bg  */
+/* The site uses BaseLayout.module.scss .dark / .light for theming via CSS cascade */
+
 .academicProjects {
-    margin: 20px;
-    font-family: 'Arial', sans-serif; /* Adjust the font as needed */
-    color: #4CAF50; /* Green for the body text */
-    text-align: center; /* Center text in the container */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .sectionTitle {
-    font-size: 24px; /* Main title size */
+    font-size: 22px;
     font-weight: bold;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #007bff; /* A line below the title */
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #007bff;
     padding-bottom: 10px;
-    display: inline-block; /* Keeps the border underneath the title */
+    display: inline-block;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    /* inherits color from parent .dark/.light via BaseLayout */
+    color: inherit;
 }
 
 .projectsContainer {
     display: flex;
-    justify-content: center; /* Center columns horizontally */
-    flex-wrap: wrap; /* Wrap columns if necessary */
-    gap: 20px; /* Space between columns */
-}
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    width: 100%;
+    max-width: 680px;
+    box-sizing: border-box;
 
-.column {
-    flex: 1; /* Allow each column to grow */
-    min-width: 300px; /* Set a minimum width for responsiveness */
-    max-width: 400px; /* Set a maximum width for larger screens */
+    @media only screen and (min-width: 700px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+    }
 }
 
 .project {
-    margin-bottom: 20px; /* Space between projects */
-    text-align: center; /* Center the text */
-    border: 1px solid #e0e0e0; /* Optional: Add a border for better visibility */
-    padding: 20px; /* Padding around project content */
-    border-radius: 5px; /* Optional: Rounded corners */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    padding: 1.25rem;
+    border-radius: 8px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    overflow: hidden;
+
+    @media only screen and (min-width: 700px) {
+        width: calc(50% - 0.625rem);
+        max-width: 320px;
+    }
 }
 
 .projectTitle {
-    font-size: 20px; /* Project title size */
-    font-weight: semi-bold;
-    color: white; /* White color for project titles */
-    padding: 5px; /* Padding around the title */
-    border-radius: 3px; /* Rounded corners for titles */
+    font-size: 16px;
+    font-weight: 600;
+    /* use site's inherited color — same as headings elsewhere */
+    color: inherit;
+    padding: 4px;
+    border-radius: 3px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.4;
 }
 
 .projectLink {
-    color: green; /* Match the title color */
-    
+    /* accent color matching site's purple/teal palette */
+    color: #8D53FF;
+    word-break: break-word;
+    overflow-wrap: break-word;
+
     &:hover {
-        text-decoration: underline; /* Underline on hover */
+        text-decoration: underline;
+        color: #CA6BE6;
     }
 }
 
 .projectDate {
-    font-size: 16px;
-    font-weight: normal; /* Regular weight for the date */
-    color: #555; /* Grey color for the date */
-    margin-left: 10px;
-    color: white;
+    display: block;
+    font-size: 13px;
+    font-weight: normal;
+    opacity: 0.6;
+    color: inherit;
+    margin-top: 4px;
 }
 
 .projectDescription {
-    font-size: 16px; /* Description size */
-    line-height: 1.5; /* Line spacing */
-    color: #4CAF50; /* Green color for description text */
+    margin-top: 0.75rem;
+    font-size: 14px;
+    line-height: 1.6;
+    /* subtle muted tone like secondary text elsewhere */
+    opacity: 0.85;
+    color: inherit;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .pagination {
     display: flex;
-    justify-content: center; /* Center the pagination buttons */
-    margin-top: 20px; /* Space above pagination */
+    justify-content: center;
+    margin-top: 1.5rem;
+    gap: 12px;
 }
 
 .paginationButton {
-    background-color: #007bff; /* Blue background */
-    color: white; /* White text */
-    border: none; /* No border */
-    padding: 10px 15px; /* Button padding */
-    margin: 0 5px; /* Space between buttons */
-    cursor: pointer; /* Pointer on hover */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 16px; /* Button text size */
-    transition: background-color 0.3s; /* Smooth background color transition */
+    background-color: #8D53FF;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: background-color 0.3s;
+    min-width: 100px;
 
     &:hover {
-        background-color: #0056b3; /* Darker blue on hover */
+        background-color: #CA6BE6;
     }
 
     &:disabled {
-        background-color: #e0e0e0; /* Light grey for disabled */
-        cursor: not-allowed; /* Not allowed cursor for disabled */
+        background-color: rgba(128,128,128,0.3);
+        color: rgba(128,128,128,0.7);
+        cursor: not-allowed;
     }
 }
