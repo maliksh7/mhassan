@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/mhassan/static/css/main.90e2edf4.css",
-    "main.js": "/mhassan/static/js/main.3f340212.js",
+    "main.css": "/mhassan/static/css/main.d14d2c9c.css",
+    "main.js": "/mhassan/static/js/main.9d4b7c68.js",
     "static/media/self.jpeg": "/mhassan/static/media/self.3251e0df82f61c59a93c.jpeg",
     "static/media/accm.png": "/mhassan/static/media/accm.1de9b9c7edf2c14851d8.png",
     "static/media/DeepMAD.png": "/mhassan/static/media/DeepMAD.691f76c47f944438e2bc.png",
@@ -10,11 +10,11 @@
     "static/media/whms.png": "/mhassan/static/media/whms.15e73fc86b9abd71ad87.png",
     "static/media/techsphere.png": "/mhassan/static/media/techsphere.87b9828f38673be384ef.png",
     "index.html": "/mhassan/index.html",
-    "main.90e2edf4.css.map": "/mhassan/static/css/main.90e2edf4.css.map",
-    "main.3f340212.js.map": "/mhassan/static/js/main.3f340212.js.map"
+    "main.d14d2c9c.css.map": "/mhassan/static/css/main.d14d2c9c.css.map",
+    "main.9d4b7c68.js.map": "/mhassan/static/js/main.9d4b7c68.js.map"
   },
   "entrypoints": [
-    "static/css/main.90e2edf4.css",
-    "static/js/main.3f340212.js"
+    "static/css/main.d14d2c9c.css",
+    "static/js/main.9d4b7c68.js"
   ]
 }
