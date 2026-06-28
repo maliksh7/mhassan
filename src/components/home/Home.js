@@ -82,6 +82,15 @@ export default function Home() {
                ))}
             </Box>
 
+            {/* Resume Button */}
+            <Box mb={2}>
+               <a href={info.resumeUrl} download>
+                  <Typography variant="body1" color="primary">
+                     Download Resume
+                  </Typography>
+               </a>
+            </Box>
+
             {/* Social Icons */}
             <Box
                display={"flex"}

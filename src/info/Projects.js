@@ -2,8 +2,9 @@ import DeepMAD from '../img/DeepMAD.png';
 import sfa from '../img/Serverless-Flask-Application.png';
 import accm from '../img/accm.png';
 import ads from '../img/ads.png';
-import ft from '../img/ft.png';
-import ProShop from '../img/project-proshop.png';
+import techsphere from '../img/techsphere.png';
+// import ProShop from '../img/project-proshop.png';
+
 import whms from '../img/whms.png';
 
 const projects = [
@@ -33,20 +34,12 @@ const projects = [
     link: "https://github.com/maliksh7/Anomaly-Detection-System",
   },
   {
-    title: "ProShop E-Commerce Store",
+    title: "TechSphere E-Commerce Store",
     domain: "Web Development",
     description:
-      "Full-stack e-commerce app built with the MERN stack (MongoDB, Express, React, Node). Includes authentication, product management, and order flow.",
-    image: ProShop,
-    link: "https://github.com/maliksh7/ProShop",
-  },
-  {
-    title: "Finance Tracker",
-    domain: "Web Development",
-    description:
-      "Ruby on Rails-based app to track expenses and income with categorized transaction history.",
-    image: ft,
-    link: "https://github.com/maliksh7/finance-tracker-",
+      "This is a ecommerce website for electronic products, developed by saad, this project is developed in Java 17, Spring Boot 21, React, AWS, Spring Data JPA and Hibernate, Spring AI and stripe.",
+    image: techsphere,
+    link: "https://github.com/maliksh7/techsphere",
   },
   {
     title: "Serverless Flask Application",

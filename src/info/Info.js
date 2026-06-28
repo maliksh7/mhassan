@@ -1,4 +1,3 @@
-import mock2 from "../img/mock2.png";
 import self1 from "../img/self.jpeg";
 
 /* Hi there! Thanks for checking out my portfolio template. Be sure to read the comments to get a better understanding of
@@ -124,13 +123,5 @@ export const info = {
         // Same as above, change the emojis to match / relate to your hobbies or interests.
         // You can also remove the emojis if you'd like, I just think they look cute :P
     ],
-    portfolio: [ // Include devops engineer projects here
-         {
-             title: "Jenkins Master-Slave on ECS using Terraform",
-             live: "https://paytonpierce.dev", //this should be a link to the live version of your project, think github pages, netlify, heroku, etc. Or your own domain, if you have it.
-             source: "https://github.com/paytonjewell", // this should be a link to the **repository** of the project, where the code is hosted.
-             image: mock2
-         } 
-    ],
-    resumeUrl: "https://drive.google.com/file/d/1v8ofYPFZ_KZ39e9om0kYNoW4Fi7ViO1U/view?usp=sharing" //this should be a link to your resume. I recommend hosting it on google drive or dropbox.
+    resumeUrl: "https://drive.google.com/file/d/1qVHtwLQOUm1VTAP_x6Qxbs83-e5zpqEU/view?usp=sharing" //this should be a link to your resume. I recommend hosting it on google drive or dropbox.
 }
