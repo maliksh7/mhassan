@@ -1,11 +1,11 @@
 import { Box, Grid } from "@mui/material";
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Route, Routes } from "react-router-dom";
-import Style from './BaseLayout.module.scss';
-import Navbar from "./Navbar";
 import About from "./about/About";
 import AcademicProjects from "./academic_research/AcademicProjects";
+import Style from './BaseLayout.module.scss';
 import Home from "./home/Home";
+import Navbar from "./Navbar";
 import Portfolio from "./portfolio/Portfolio";
 
 export default function BaseLayout() {

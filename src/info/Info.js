@@ -1,5 +1,5 @@
 import mock2 from "../img/mock2.png";
-import self1 from "../img/self1.png";
+import self1 from "../img/self.jpeg";
 
 /* Hi there! Thanks for checking out my portfolio template. Be sure to read the comments to get a better understanding of
 how to make this template work best for you! */
@@ -34,7 +34,7 @@ export const info = {
 
         {
             emoji: "🖥️",
-            text: "Information Technology Intern at Texas Instruments"  
+            text: "Software Engineer at Texas Instruments"  
         },
         {
             emoji: '🌎',
@@ -46,21 +46,11 @@ export const info = {
         },
         {
             emoji: "📧",
-            text: "awansaadhassan@gmail.com"
+            text: "muhsaad.hassan@gmail.com"
         }
 
     ],
     socials: [
-        {
-            link: "https://www.facebook.com/maliksaadh1/",
-            icon: 'fa fa-facebook',
-            label: 'facebook'
-        },
-        {
-            link: "https://www.instagram.com/_maliksh7/",
-            icon: 'fa fa-instagram',
-            label: 'instagram'
-        },
         {
             link: "https://github.com/maliksh7/",
             icon: "fa fa-github",
@@ -89,7 +79,7 @@ export const info = {
         },
         // add my medium blog link
         {
-            link: "https://medium.com/@maliksh7",
+            link: "https://saadhsn.medium.com/",
             icon: "fa fa-medium",
             label: 'medium'
         }
@@ -97,11 +87,11 @@ export const info = {
         // Just change the links so that they lead to your social profiles.
 
     ],
-    bio: "Hello! 👋 I'm Saad. 💼 I'm an Software / DevOps Engineer 🌐 doing Master at Hochschule Hof. 🏥 I studied CompSci 🖥️ at Fast NUCES 🎓, and I enjoy reading blogs 📚 and playing online games 🎮 in my free time! 😄",
+    bio: "Hello! 👋 I'm Saad. 💼 I'm an Software Engineer 🌐 completed Master in Software Engineering at Hochschule Hof, Germany🎓, and I enjoy reading blogs 📚 and playing online games 🎮 in my free time! 😄",
     skills:
     {
-        proficientWith: ['aws cloud', 'java', 'git', 'docker', 'ruby', 'python', 'nodejs', 'linux', 'bash', 'C#', 'Blazor'],
-        exposedTo: ['flutter', 'React', 'go'],
+        proficientWith: ['Spring Boot', 'java', 'aws cloud', 'react', 'git', 'docker', 'ruby', 'python', 'linux', 'bash', 'C#', 'Blazor'],
+        // exposedTo: ['flutter', 'React', 'go'],
         certifications: ['AWS Academy Cloud Foundations']
     }
     ,
@@ -141,5 +131,6 @@ export const info = {
              source: "https://github.com/paytonjewell", // this should be a link to the **repository** of the project, where the code is hosted.
              image: mock2
          } 
-    ]
+    ],
+    resumeUrl: "https://drive.google.com/file/d/1v8ofYPFZ_KZ39e9om0kYNoW4Fi7ViO1U/view?usp=sharing" //this should be a link to your resume. I recommend hosting it on google drive or dropbox.
 }

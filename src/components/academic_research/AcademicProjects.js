@@ -1,9 +1,15 @@
 // src/components/AcademicResearch/AcademicProjects.js
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './AcademicProjects.module.scss'; // Import the SCSS module
 
 const projects = [
+    {
+        title: "Master Thesis - Automated API Connectivity and Credential Monitoring System for Logistics Integration (ACCM))",
+        date: "(09/2025)",
+        description: "Developing an automated system to monitor API connectivity and credentials for seamless logistics integration at Texas Instruments.",
+        link: ""
+    },
     {
         title: "Final Project Report - Malicious Activity Detection Using Deep Learning",
         date: "(02/2022)",
@@ -53,48 +59,30 @@ const AcademicProjects = () => {
     };
 
     return (
-        <div className={styles.academicProjects}>
+        // generate main container div in the center of the page horizontally and vertically with min height of 100vh
+        <div
+            className={styles.academicProjects}
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '90vh', padding: '1rem' }}
+        >
             <h2 className={styles.sectionTitle}>Academic Projects and Research</h2>
-
             <div className={styles.projectsContainer}>
-                <div className={styles.column}>
-                    {currentProjects[0] && (
-                        <div className={styles.project}>
-                            <h3 className={styles.projectTitle}>
-                                <a 
-                                    href={currentProjects[0].link} 
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                    className={styles.projectLink}
-                                >
-                                    {currentProjects[0].title}
-                                </a>
-                                <span className={styles.projectDate}>{currentProjects[0].date}</span>
-                            </h3>
-                            <p className={styles.projectDescription}>{currentProjects[0].description}</p>
-                        </div>
-                    )}
-                </div>
-                <div className={styles.column}>
-                    {currentProjects[1] && (
-                        <div className={styles.project}>
-                            <h3 className={styles.projectTitle}>
-                                <a 
-                                    href={currentProjects[1].link} 
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                    className={styles.projectLink}
-                                >
-                                    {currentProjects[1].title}
-                                </a>
-                                <span className={styles.projectDate}>{currentProjects[1].date}</span>
-                            </h3>
-                            <p className={styles.projectDescription}>{currentProjects[1].description}</p>
-                        </div>
-                    )}
-                </div>
+                {currentProjects.map((project, index) => (
+                    <div key={index} className={styles.project}>
+                        <h3 className={styles.projectTitle}>
+                            <a 
+                                href={project.link} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className={styles.projectLink}
+                            >
+                                {project.title}
+                            </a>
+                            <span className={styles.projectDate}>{project.date}</span>
+                        </h3>
+                        <p className={styles.projectDescription}>{project.description}</p>
+                    </div>
+                ))}
             </div>
-
             <div className={styles.pagination}>
                 <button 
                     className={styles.paginationButton} 
@@ -113,6 +101,75 @@ const AcademicProjects = () => {
             </div>
         </div>
     );
+
+    // return (
+
+
+
+
+
+
+        
+    //     <div className={styles.academicProjects}>
+    //         <h2 className={styles.sectionTitle}>Academic Projects and Research</h2>
+
+    //         <div className={styles.projectsContainer}>
+    //             <div className={styles.column}>
+    //                 {currentProjects[0] && (
+    //                     <div className={styles.project}>
+    //                         <h3 className={styles.projectTitle}>
+    //                             <a 
+    //                                 href={currentProjects[0].link} 
+    //                                 target="_blank" 
+    //                                 rel="noopener noreferrer"
+    //                                 className={styles.projectLink}
+    //                             >
+    //                                 {currentProjects[0].title}
+    //                             </a>
+    //                             <span className={styles.projectDate}>{currentProjects[0].date}</span>
+    //                         </h3>
+    //                         <p className={styles.projectDescription}>{currentProjects[0].description}</p>
+    //                     </div>
+    //                 )}
+    //             </div>
+    //             <div className={styles.column}>
+    //                 {currentProjects[1] && (
+    //                     <div className={styles.project}>
+    //                         <h3 className={styles.projectTitle}>
+    //                             <a 
+    //                                 href={currentProjects[1].link} 
+    //                                 target="_blank" 
+    //                                 rel="noopener noreferrer"
+    //                                 className={styles.projectLink}
+    //                             >
+    //                                 {currentProjects[1].title}
+    //                             </a>
+    //                             <span className={styles.projectDate}>{currentProjects[1].date}</span>
+    //                         </h3>
+    //                         <p className={styles.projectDescription}>{currentProjects[1].description}</p>
+    //                     </div>
+    //                 )}
+    //             </div>
+    //         </div>
+
+    //         <div className={styles.pagination}>
+    //             <button 
+    //                 className={styles.paginationButton} 
+    //                 onClick={handlePreviousPage} 
+    //                 disabled={currentPage === 0}
+    //             >
+    //                 Previous
+    //             </button>
+    //             <button 
+    //                 className={styles.paginationButton} 
+    //                 onClick={handleNextPage} 
+    //                 disabled={currentPage >= Math.ceil(projects.length / projectsPerPage) - 1}
+    //             >
+    //                 Next
+    //             </button>
+    //         </div>
+    //     </div>
+    // );
 };
 
 export default AcademicProjects;

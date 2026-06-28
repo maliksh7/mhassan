@@ -1,5 +1,4 @@
 import { Box } from "@mui/material";
-import React from 'react';
 import { info } from "../../info/Info";
 import Style from './About.module.scss';
 import Terminal from "./Terminal";
@@ -19,6 +18,19 @@ export default function About() {
         </>;
     }
 
+    function openResume() {
+        return <>
+            <p><span style={{color: info.baseColor}}>{name} $</span> cd profile/resume
+            </p>
+            <p><span style={{color: info.baseColor}}>profile/resume <span
+                className={Style.green}>(main)</span> $</span> open resume.pdf
+            </p>
+            <p>Opening <a href={info.resumeUrl} target={"_blank"} rel="noreferrer">resume.pdf</a> ...
+                </p>
+
+        </>;
+    }
+
     function skillsText() {
         return <>
             <p><span style={{color: info.baseColor}}>{name} $</span> cd skills/tools
@@ -29,10 +41,10 @@ export default function About() {
             <ul className={Style.skills}>
                 {info.skills.proficientWith.map((proficiency, index) => <li key={index}>{proficiency}</li>)}
             </ul>
-            <p style={{color: info.baseColor}}> Exposed To</p>
+            {/* <p style={{color: info.baseColor}}> Exposed To</p>
             <ul className={Style.skills}>
                 {info.skills.exposedTo.map((skill, index) => <li key={index}>{skill}</li>)}
-            </ul>
+            </ul> */}
 
         </>;
     }
@@ -64,9 +76,13 @@ export default function About() {
         </>;
     }
 
+
+
     return (
-        <Box display={'flex'} flexDirection={'column'} alignItems={'center'} mt={'3rem'}>
+        // pt: { xs: 10, md: 12 }, // 👈 added top padding for navbar space
+        <Box display={'flex'} flexDirection={'column'} alignItems={'center'} mt={'3rem'} pt={{ xs: 10, md: 12 }} px={2} pb={5} minHeight={'100vh'}>
             <Terminal text={aboutMeText()}/>
+            <Terminal text={openResume()}/>
             <Terminal text={skillsText()}/>
             <Terminal text={certsText()}/>
             <Terminal text={miscText()}/>
