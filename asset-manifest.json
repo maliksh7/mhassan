@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/mhassan/static/css/main.d14d2c9c.css",
-    "main.js": "/mhassan/static/js/main.9d4b7c68.js",
+    "main.css": "/mhassan/static/css/main.408ba25d.css",
+    "main.js": "/mhassan/static/js/main.ecaec007.js",
     "static/media/self.jpeg": "/mhassan/static/media/self.3251e0df82f61c59a93c.jpeg",
     "static/media/accm.png": "/mhassan/static/media/accm.1de9b9c7edf2c14851d8.png",
     "static/media/DeepMAD.png": "/mhassan/static/media/DeepMAD.691f76c47f944438e2bc.png",
@@ -10,11 +10,11 @@
     "static/media/whms.png": "/mhassan/static/media/whms.15e73fc86b9abd71ad87.png",
     "static/media/techsphere.png": "/mhassan/static/media/techsphere.87b9828f38673be384ef.png",
     "index.html": "/mhassan/index.html",
-    "main.d14d2c9c.css.map": "/mhassan/static/css/main.d14d2c9c.css.map",
-    "main.9d4b7c68.js.map": "/mhassan/static/js/main.9d4b7c68.js.map"
+    "main.408ba25d.css.map": "/mhassan/static/css/main.408ba25d.css.map",
+    "main.ecaec007.js.map": "/mhassan/static/js/main.ecaec007.js.map"
   },
   "entrypoints": [
-    "static/css/main.d14d2c9c.css",
-    "static/js/main.9d4b7c68.js"
+    "static/css/main.408ba25d.css",
+    "static/js/main.ecaec007.js"
   ]
 }
