@@ -1,45 +1,138 @@
-# React Portfolio, multiple pages with dark mode
+---
 
-## features
+## 🚀 Getting Started
 
-🌑 Dark Mode Toggler
+### Prerequisites
 
-📖 Multiple Pages (React Router)
+- Node.js `>=14`
+- npm or yarn
 
-📱 Fully Responsive
+### 1. Fork & Clone
 
-🎨 Modern Design
+```bash
+# Fork the repo first via GitHub, then:
+git clone https://github.com/<your-username>/mhassan.git
+cd mhassan
+```
 
-💡 Perfect Lighthouse Score
+### 2. Install Dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+### 3. Run Locally
+
+```bash
+npm start
+```
+
+Opens at `http://localhost:3000/mhassan`
 
 ---
 
-## how to use
+## ✏️ Personalising It
 
-- fork the repository and clone locally
-- cd into the project and run `npm install` to install dependencies
-- once installation is complete, run `npm run start` to get your local copy running in the browser.
+All content lives in two files — you won't need to touch any component code.
 
-## Usage instructions
+### `src/info/Info.js`
 
-### 1. replace the images
+Update your name, position, bio bullets, skills, certifications, hobbies, social links, and resume URL:
 
-- open the project in your file explorer, and navigate to `src/img`. there, you will see a bunch of images. these need
-  to be replaced with your own images.
+```js
+export const info = {
+  firstName: "Your First Name",
+  lastName:  "Your Last Name",
+  position:  "a Full Stack Developer",
+  bio:       "Hello! I'm ...",
+  socials: [
+    { link: "https://github.com/you", icon: "fa fa-github", label: "github" },
+  ],
+  skills: {
+    proficientWith: ["React", "Node.js", "AWS"],
+  },
+  resumeUrl: "https://drive.google.com/your-resume-link",
+};
+```
 
-#### self.png
+### `src/info/Projects.js`
 
-- add an image of yourself with the background removed, and cropped into a square. i know this seems picky, but the
-  template is set up in a way that this is how it will look best :) I recommend using https://remove.bg to remove the
-  background from your image. If this website wants to charge you for some reason, try searching "Remove Background AI"
-  on Google, there are some free ones there :)
-- Once you add it to this img folder, rename it to `self.png` (delete the old self.png so
-  yours replaces it)
-- if background removal is not an option for you, any image you use will automatically be made into a circle. for this
-  reason, square images without too tall of an aspect-ratio work best.
-- example with background removed:
-### 2. edit `Info.js`
+Add your own projects with title, domain, description, image, and GitHub link:
 
-Next, open the project in your code editor. Navigate to `src/info/Info.js`. There are some instructions written in the
-comments there, but I will go over it all here as well:
+```js
+const projects = [
+  {
+    title:       "My Awesome Project",
+    domain:      "Web Development",
+    description: "Brief description of what it does.",
+    image:       myProjectImg,
+    link:        "https://github.com/you/project",
+  },
+];
+```
 
+### `src/img/`
+
+Replace the images in this folder:
+
+| File | Usage |
+|---|---|
+| `self.jpeg` | Your profile photo (square crop works best) |
+| `project-*.png` | Project screenshots used in Portfolio cards |
+
+> 💡 Use [remove.bg](https://remove.bg) to remove the background from your profile photo for the cleanest result.
+
+---
+
+## 🌐 Deploying to GitHub Pages
+
+### 1. Update `package.json`
+
+Set the `homepage` field to your GitHub Pages URL:
+
+```json
+"homepage": "https://<your-username>.github.io/<repo-name>"
+```
+
+### 2. Update the base route
+
+In `BaseLayout.js`, update all route paths from `/mhassan` to `/<your-repo-name>`.
+
+### 3. Deploy
+
+```bash
+npm run deploy
+```
+
+This runs `npm run build` then pushes the `build/` folder to the `gh-pages` branch. Your site will be live within a minute.
+
+---
+
+## 🐛 Found a Bug? Have a Suggestion?
+
+Contributions and feedback are very welcome!
+
+👉 **[Open an Issue](https://github.com/maliksh7/mhassan/issues/new)** — bug reports, feature requests, or UI suggestions
+
+👉 **[Fork the Repo](https://github.com/maliksh7/mhassan/fork)** — make it your own and submit a PR if you improve something
+
+Please include:
+- A clear description of the issue or suggestion
+- Steps to reproduce (for bugs)
+- Screenshots if relevant
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+<div align="center">
+
+Made with ☕ by [Saad Hassan](https://github.com/maliksh7) — feel free to fork, star ⭐, or reach out!
+
+</div>
