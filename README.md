@@ -1,4 +1,3 @@
----
 
 ## 🚀 Getting Started
 
@@ -9,7 +8,7 @@
 
 ### 1. Fork & Clone
 
-```bash
+```
 # Fork the repo first via GitHub, then:
 git clone https://github.com/<your-username>/mhassan.git
 cd mhassan
@@ -135,4 +134,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 Made with ☕ by [Saad Hassan](https://github.com/maliksh7) — feel free to fork, star ⭐, or reach out!
 
-</div>
+</div>``
